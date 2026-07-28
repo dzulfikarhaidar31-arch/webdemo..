@@ -1,0 +1,277 @@
+/* =============================================
+   PROGRAM DETAIL PAGE — program-detail.css
+   ============================================= */
+
+.program-block {
+  padding: 140px 6% 100px;
+  position: relative;
+  overflow: hidden;
+  background: var(--black);
+  min-height: 100vh;
+}
+
+.program-block-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---- PROGRAM TITLE HERO ---- */
+.program-title-hero {
+  text-align: center;
+  margin-bottom: 56px;
+  position: relative;
+}
+
+.program-title-hero .program-div-badge {
+  position: static;
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.badge-ene { background: rgba(232,119,34,0.15); color: var(--orange); border: 1px solid rgba(232,119,34,0.3); }
+.badge-hcm { background: rgba(192,57,43,0.15); color: var(--red-light); border: 1px solid rgba(192,57,43,0.3); }
+.badge-mcr { background: rgba(232,119,34,0.12); color: var(--orange); border: 1px solid rgba(232,119,34,0.25); }
+.badge-er  { background: rgba(192,57,43,0.12); color: var(--red-light); border: 1px solid rgba(192,57,43,0.25); }
+
+.program-title-hero h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 12px;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+.program-title-hero .program-subtitle {
+  font-family: var(--font-accent);
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-weight: 500;
+  font-style: italic;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.program-title-hero .program-year-tag {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  color: var(--gray);
+  font-weight: 500;
+  margin-top: 14px;
+  letter-spacing: 0.08em;
+}
+
+/* ---- PROGRAM IMAGE ---- */
+.program-image-wrap {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 48px;
+  position: relative;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 60px rgba(232,119,34,0.06);
+}
+
+.program-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s ease;
+}
+
+.program-image-wrap:hover img {
+  transform: scale(1.03);
+}
+
+/* Decorative glow behind image */
+.program-image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 24px;
+  background: var(--gradient);
+  opacity: 0.08;
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.program-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: var(--gray);
+  background: linear-gradient(135deg, var(--card), var(--card2));
+}
+
+/* ---- PROGRAM CONTENT (COPYWRITING) ---- */
+.program-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.program-content .program-lead {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--gray-light);
+  margin-bottom: 32px;
+}
+
+.program-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  margin: 40px 0 16px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.program-content h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 4px;
+  height: calc(100% - 8px);
+  background: var(--gradient);
+  border-radius: 2px;
+}
+
+.program-content p {
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  line-height: 1.85;
+  color: var(--gray-light);
+  margin-bottom: 20px;
+}
+
+.program-content .program-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.program-content .program-tag {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 50px;
+  background: var(--card2);
+  border: 1px solid var(--border);
+  color: var(--gray);
+  transition: var(--transition);
+}
+
+.program-content .program-tag:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.program-content .program-credit {
+  font-family: var(--font-accent);
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin-top: 20px;
+  font-style: italic;
+}
+
+.program-content ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  counter-reset: list-counter;
+}
+
+.program-content ol li {
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  line-height: 1.85;
+  color: var(--gray-light);
+  margin-bottom: 10px;
+  padding-left: 8px;
+}
+
+.program-content ol li strong {
+  color: var(--white);
+}
+
+/* ---- SCROLL REVEAL ANIMATIONS ---- */
+.prog-reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.prog-reveal.visible {
+  opacity: 1;
+}
+
+.prog-reveal-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.prog-reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.prog-reveal-scale {
+  opacity: 0;
+  transform: scale(0.93);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.prog-reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  font-family: var(--font-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.back-link:hover {
+  color: var(--white);
+  transform: translateX(-4px);
+}
+
+@media (max-width: 768px) {
+  .program-block {
+    padding: 110px 5% 60px;
+  }
+  .program-image-wrap {
+    border-radius: 14px;
+    margin-bottom: 32px;
+  }
+  .program-content h3 {
+    font-size: 1.3rem;
+  }
+}

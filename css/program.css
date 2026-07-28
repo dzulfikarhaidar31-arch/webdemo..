@@ -1,0 +1,279 @@
+/* =============================================
+   PROGRAM PAGE — program.css
+   ============================================= */
+
+/* ---- FILTER TABS ---- */
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.filter-btn {
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-family: var(--font-accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--gray-light);
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.filter-btn.active {
+  background: var(--gradient);
+  border-color: transparent;
+  color: var(--white);
+  box-shadow: var(--glow);
+}
+
+/* ---- PROGRAMS GRID ---- */
+.programs-section {
+  background: var(--black);
+  min-height: 100vh;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.program-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(232,119,34,0.4);
+  box-shadow: var(--glow), 0 24px 60px rgba(0,0,0,0.5);
+}
+
+.program-card.hidden {
+  display: none;
+}
+
+.program-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  background: var(--card2);
+}
+
+.program-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.program-card:hover .program-image img {
+  transform: scale(1.08);
+}
+
+/* Placeholder gradient when no image */
+.program-image-placeholder {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  position: relative;
+}
+
+.program-div-badge {
+  position: absolute;
+  top: 16px; left: 16px;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-family: var(--font-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge-ene { background: rgba(232,119,34,0.9); color: var(--white); }
+.badge-hcm { background: rgba(192,57,43,0.9); color: var(--white); }
+.badge-mcr { background: rgba(100,180,255,0.9); color: var(--black); }
+.badge-er  { background: rgba(100,220,150,0.9); color: var(--black); }
+.badge-all { background: rgba(255,255,255,0.15); color: var(--white); backdrop-filter: blur(4px); }
+
+.program-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 40%, rgba(0,0,0,0.7));
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.program-card:hover .program-overlay { opacity: 1; }
+
+.program-overlay-text {
+  font-family: var(--font-accent);
+  font-size: 0.82rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.program-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.program-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.program-year {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray);
+  letter-spacing: 0.05em;
+}
+
+.program-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.25;
+}
+
+.program-desc {
+  font-size: 0.88rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.program-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.program-division-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.program-division-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+
+.dot-ene { background: var(--orange); }
+.dot-hcm { background: var(--red-light); }
+.dot-mcr { background: #64B4FF; }
+.dot-er  { background: #64DC96; }
+
+.program-link {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--card2);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  color: var(--gray);
+  transition: var(--transition);
+}
+
+.program-card:hover .program-link {
+  background: var(--gradient);
+  border-color: transparent;
+  color: var(--white);
+  transform: rotate(-45deg);
+}
+
+/* ---- FEATURED PROGRAM (LARGE CARD) ---- */
+.program-card.featured {
+  grid-column: span 2;
+}
+
+.program-card.featured .program-image {
+  height: 280px;
+}
+
+.program-card.featured .program-title {
+  font-size: 1.6rem;
+}
+
+/* ---- PROGRAMS HERO ---- */
+.programs-hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.ph-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ph-stat .num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.ph-stat .lbl {
+  font-family: var(--font-accent);
+  font-size: 0.82rem;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1024px) {
+  .programs-grid { grid-template-columns: repeat(2, 1fr); }
+  .program-card.featured { grid-column: span 2; }
+}
+
+@media (max-width: 768px) {
+  .programs-grid { grid-template-columns: 1fr; }
+  .program-card.featured { grid-column: span 1; }
+  .programs-hero-stats { flex-wrap: wrap; gap: 24px; }
+  .filter-tabs { gap: 8px; }
+  .filter-btn { padding: 8px 16px; font-size: 0.82rem; }
+}
